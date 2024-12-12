@@ -19,8 +19,7 @@ class WelcomeView: UIView {
     private let welcomeLabel: UILabel = {
         let label = UILabel()
         label.text = "Boas vindas ao Nearby!"
-//        label.textColor = .label
-//        label.font = .systemFont(ofSize: 24, weight: .semibold)
+        label.font = Typography.titleXL
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -28,6 +27,7 @@ class WelcomeView: UIView {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Tenha cupons de vantagem para usar em seus estabelecimentos favoritos."
+        label.font = Typography.titleMD
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,6 +36,7 @@ class WelcomeView: UIView {
         let button = UIButton(type: .system)
         button.setTitle("Começar", for: .normal)
         button.setTitleColor(Colors.gray100, for: .normal)
+//        button.titleLabel.font = Typography.action
         button.backgroundColor = Colors.greenBase
         button.layer.cornerRadius = 8
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -71,24 +72,25 @@ class WelcomeView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            logoImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            logoImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             logoImageView.widthAnchor.constraint(equalToConstant: 48),
             logoImageView.heightAnchor.constraint(equalToConstant: 48),
             
             welcomeLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 8),
-            welcomeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 4),
+            welcomeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
             
-            descriptionLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 4),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
+            descriptionLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 8),
+            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             
-            tipsStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-            tipsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            tipsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+            tipsStackView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 24),
+            tipsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            tipsStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
             
-            startButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 8),
-            startButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            startButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
+            startButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24),
+            startButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            startButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            startButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
     

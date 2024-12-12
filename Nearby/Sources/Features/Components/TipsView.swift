@@ -13,17 +13,20 @@ public class TipsView: UIView {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = Colors.redBase
         return imageView
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
+        label.font = Typography.titleSM
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
+        label.font = Typography.textSM
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
